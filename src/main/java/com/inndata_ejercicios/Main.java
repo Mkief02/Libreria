@@ -18,7 +18,7 @@ public class Main {
 
 
         // Crear librería y agregar categorías
-        Libreria libreria = new Libreria("Librería");
+        Libreria libreria = new Libreria("Librería Renaissance");
         libreria.agregarCategoria(categoriaLibros);
         libreria.agregarCategoria(categoriaRevistas);
 
@@ -29,10 +29,6 @@ public class Main {
         inventario.addElement(libro2);
         inventario.addElement(revista1);
 
-
-        
-        // Mostrar resultados (IMPORTANTE: ahora se pasa la lista de categorías)
-        libreria.mostrarInventario();
-        inventario.mostrarInventario(libreria.getCategorias());
+        libreria.mostrarInventarioCompleto(inventario);
     }
 }

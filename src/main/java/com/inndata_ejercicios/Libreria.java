@@ -21,11 +21,23 @@ public class Libreria {
         return categorias;
     }
 
-    public void mostrarInventario() {
-        System.out.println("🏪 Librería: " + nombre);
+    public void mostrarInventarioCompleto(Inventario<Producto> inventario) {
+        System.out.println("\n🏪 Librería: " + nombre);
+        System.out.println("========== INVENTARIO ==========");
         for (Categoria c : categorias) {
-            c.mostrarProductos();
+            System.out.println("\n📚 Categoría: " + c.getNombre());
+            System.out.println("------------------------------");
+            for (Producto p : c.getListaProductos()) {
+                p.mostrarProducto();
+                System.out.println();
+            }
         }
+        System.out.println("------- Inventario general (todos) -------");
+        for (Producto p : inventario.getElements()) {
+            p.mostrarProducto();
+            System.out.println();
+        }
+        System.out.println("========== FIN INVENTARIO ==========");
     }
 
 }
